@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "lib": ["es2020"],
+    "target": "es2017",
+    "lib": ["es2017", "dom"],
     "typeRoots": ["node_modules/@types"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -18,18 +18,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
-      "@config/*": ["config/*"],
-      "@controllers/*": ["controllers/*"],
-      "@dto/*": ["dto/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@routers/*": ["routers/*"],
-      "@utils/*": ["utils/*"]
+      "@/*": ["./*"]
     }
   },
-  "include": [".//*.ts", ".//*.json", ".env"],
-  "exclude": ["node_modules", "./http", "./logs", "./tests"]
+  "exclude": ["./node_modules", "./dist"]
 }
