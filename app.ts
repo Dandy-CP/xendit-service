@@ -5,6 +5,7 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import validateEnv from "@/utils/validateEnv";
 import InvoiceRouter from "@/routers/invoice.routers";
+import RefundRouter from "./routers/refund.routers";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 InvoiceRouter(app);
+RefundRouter(app);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({
