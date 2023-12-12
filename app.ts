@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import validateEnv from "@/utils/validateEnv";
+import InvoiceRouter from "@/routers/invoice.routers";
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.get("/", (req: Request, res: Response) => {
     message: "Welcome To Xendit Service",
   });
 });
+
+InvoiceRouter(app);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({
