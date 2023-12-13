@@ -7,6 +7,7 @@ import validateEnv from "@/utils/validateEnv";
 import InvoiceRouter from "@/routers/invoice.routers";
 import RefundRouter from "./routers/refund.routers";
 import BalanceRouter from "./routers/balance.router";
+import PayoutRouter from "./routers/payout.router";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.get("/", (req: Request, res: Response) => {
 InvoiceRouter(app);
 RefundRouter(app);
 BalanceRouter(app);
+PayoutRouter(app);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({
